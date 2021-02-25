@@ -4,11 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../starter_files/assets/vendor/boostrap/bootstrap.css">
+        <link rel="stylesheet" href="../starter_files/assets/vendor/boostrap/bootstrap.css">
     <link rel="stylesheet" href="../starter_files/assets/css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="body">
+    <header>
+        <div class="container">
+            <div class="col-auto d-flex align-items-center m-3">
+                <img src="./assets/img/logo.png" alt="" width="100" class="logo img-fluid">
+            </div>
+            <h1 class="text-center">WELCOME TITLE</h1>
+        </div>
+    </header>
+    <section>
+        <div class="container mt-5">
+            <div class="row p-5 bg-light rounded shadow">
+                <div class="col-6">
+                    <h2><U>Lorem upsom</U></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, error, cupiditate sapiente vitae minima, optio odio porro hic vel quas ducimus. Eligendi laborum iure vel dolor, accusamus nemo consectetur. <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, iure odio corrupti deserunt totam debitis molestiae, modi, iste eos sequi velit nesciunt laborum dolor repudiandae ea voluptatem illo reprehenderit eaque.
+                    </p>
+                    <a href="#" class="btn btn-warning text-dark">Read more</a>
+                </div>
+                <div class="col-6">
+                    <h2 class="text-center">Log in</h2>
+                    <form action="./index.html" method="post" class="p-5 bg-light rounded border bg-dark text-light">
+                        <div class="form-group mb-2">
+                            <label for="email" class="d-block">Email:</label>
+                            <input type="email" name="email" id="email" class="w-100">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="password" class="d-block ">Password:</label>
+                            <input type="password" name="password" id="password" class="w-100">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning text-dark m-2 pr-3 pl-3">Log in</button>
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
     
 </body>
 </html>

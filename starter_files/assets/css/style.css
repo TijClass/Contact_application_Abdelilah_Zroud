@@ -1,0 +1,14 @@
+
+
+.body{
+    height: 100vh;
+    background-image: linear-gradient(var(--bs-yellow) 50%, var(--bs-dark) 50%);
+}
+input::placeholder { 
+    color: var(--bs-yellow) !important;
+    opacity: .7 !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd){
+    background-color: var( --bs-yelow-light);
+    
+}
