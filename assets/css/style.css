@@ -1,0 +1,43 @@
+
+
+.body{
+    height: 100vh;
+    background-image: linear-gradient(var(--bs-yellow) 50%, var(--bs-dark) 50%);
+}
+input::placeholder { 
+    color: var(--bs-yellow) !important;
+    opacity: .7 !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd){
+    background-color: var( --bs-yelow-light);
+    
+}
+.modal-body{
+    background-image:url(../img/zane-lee-OoZfZnJRR9Q-unsplash.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.modal-body form{
+    position: relative;
+    z-index: 2;
+}
+.modal-body::before{
+    content: "";
+    position: absolute;
+    /* width: 100%;
+    height: 100vh; */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--bs-yellow) ;
+    opacity: .7;
+    z-index: 0;
+}
+.h5-add-person {
+    z-index: 1;
+}
+.btn-close {
+    z-index: 1;
+}
