@@ -1,7 +1,10 @@
 <?php
-print_r($_POST);
-die();
 if(isset($_POST)){
+    // get from data base
+    $sql = "SELECT * FROM users";
+    
+
+    //
     $email = $_POST['email'];
     $password = $_POST['password'];
     if($email != "" && $password != "" ){
@@ -9,9 +12,12 @@ if(isset($_POST)){
                 if ($password == "1234"){
                     session_start(); 
                     $_SESSION['login']=true;
-                    header('Location: ./index.html');
+                    setcookie("login_email",$email, time() + (86400 * 30), "/");
+                    setcookie("login_password",$password, time() + (86400 * 30), "/");
+                    header('Location: ./index.php');
                 }
             }
     }
+}else{
+    header('location: ./login.php');
 }
-header('location: ./login.php');

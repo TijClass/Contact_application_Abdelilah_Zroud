@@ -38,7 +38,7 @@ if(!isset($_SESSION['login'])){
           <div class="col-auto">
             <div class="input-group">
               <div class="input-group-text bg-dark text-warning border-0" id="btnGroupAddon"><i class="fas fa-search"></i></div>
-              <input type="text" class="form-control bg-dark text-warning border-0" placeholder="Search" aria-label="Input group example" aria-describedby="btnGroupAddon">
+              <input type="text" class="form-control bg-dark text-warning border-0" id="search" placeholder="Search" aria-label="Input group example" aria-describedby="btnGroupAddon">
             </div>
           </div>
           
@@ -223,15 +223,15 @@ if(!isset($_SESSION['login'])){
         <input type="phone" name="phone" id="phone" placeholder="+212 6 XX-XX-XX-XX" class="w-100">
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="family">
       <label class="form-check-label" for="inlineRadio1">Family</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="friends">
       <label class="form-check-label" for="inlineRadio2">Friends</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="business">
       <label class="form-check-label" for="inlineRadio2">Business</label>
     </div>
     <div class="form-group mb-2">
