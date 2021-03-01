@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+  header('location: login.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center col bg-dark rounded-pill text-light">
                 <div><h1 class="h4 m-3">Welcome text</h1></div>
-                <div><a href="./login.html" class="m-2 btn btn-light  bg-warning text-dark border-0">Log out</a></div>
+                <div><a href="./logout.php" class="m-2 btn btn-light  bg-warning text-dark border-0">Log out</a></div>
             </div>
         </div>
         </div>
@@ -241,8 +247,9 @@
     
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="./assets/vendor/boostrap/bootstrap.min.js"></script>
 <script src="./assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -11,6 +11,6 @@ if($firstname != "" && $lastname != "" && $email != "" && $adresse != "" && $pho
     echo("add person +");
 }
 else{
-    echo("replire tout les case ");
+    echo("replire tout les case");
 }
 }
