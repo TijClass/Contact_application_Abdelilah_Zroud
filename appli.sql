@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `email` varchar(100) NOT NULL,
   `phone` varchar(50) NOT NULL,
   `address1` varchar(100) NOT NULL,
-  `group` varchar(100) NOT NULL `notes` text NOT NULL,
+  `group` varchar(100) NOT NULL,
+  `notes` text NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 );
