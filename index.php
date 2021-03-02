@@ -1,8 +1,21 @@
 <?php
+include "./connection.php";
 session_start();
 if(!isset($_SESSION['login'])){
   header('location: login.html');
 }
+
+$sql = "SELECT * FROM contacts";
+$result = mysqli_query($conn, $sql);
+
+// if (mysqli_num_rows($result) > 0) {
+//   // output data of each row
+//   while($row = mysqli_fetch_assoc($result)) {
+//     echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+//   }
+// } else {
+//   echo "0 results";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,127 +80,24 @@ if(!isset($_SESSION['login'])){
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">55011</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55012</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55012</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55012</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
-          <tr>
-            <th scope="row">55013</th>
-            <td>Abby</td>
-            <td>Adam</td>
-            <td>aby@anywhere.com</td>
-            <td>Adresse1</td>
-            <td>Phone</td>
-            <td>family</td>
-            <td><a href="#">Edit</a></td>
-            <td scope="col"><i class="fas fa-times-circle"></i></td>
-          </tr>
+          <?php
+              if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                  echo '<tr>
+                  <th scope="row">'. $row["id"].'</th>
+                  <td>'. $row["first_name"].'</td>
+                  <td>'.$row["last_name"].'</td>
+                  <td>'.$row["email"].'</td>
+                  <td>'.$row["address1"].'</td>
+                  <td>'.$row["phone"].'</td>
+                  <td>'.$row["group"].'</td>
+                  <td><a href="#">Edit</a></td>
+                  <td scope="col"><i class="fas fa-times-circle"></i></td>
+                </tr>';
+                }
+              }
+          ?>
         </tbody>
       </table>
     </div>

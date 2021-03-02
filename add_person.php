@@ -11,7 +11,7 @@ if(isset($_POST)){
 
 
     if($firstname != "" && $lastname != "" && $email != "" && $adresse != "" && $phone != "" && $group != "" && $notes != ""  ){
-        $sql = "INSERT INTO contacts (`first_name`, `last_name`, `email`, `phone`, `address1`, `group`, `notes`)
+        $sql = "INSERT INTO contacts (`first_name`, `last_name`, `email`, `address1`, `phone`, `group`, `notes`)
         VALUES ('$firstname', '$lastname', '$email' , '$adresse' , '$phone' , '$group' , '$notes')";
 
         if (mysqli_query($conn, $sql)) {
