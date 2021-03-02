@@ -35,3 +35,19 @@ $("#add_person").submit(function(e){
     }
   });
 });
+
+// delete row 
+function deleteRow(id){
+  $.post({
+    url:"./delete.php",
+    data:{"id":id},
+    success: function(res){
+      if(res == 1){
+        $('tr[data-id="'+id+'"]').fadeOut();
+      }
+    },
+    error:function(err){
+      console.error(err);
+    }
+  })
+}

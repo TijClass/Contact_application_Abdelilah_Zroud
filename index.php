@@ -84,7 +84,7 @@ $result = mysqli_query($conn, $sql);
               if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                  echo '<tr>
+                  echo '<tr data-id="'. $row["id"].'">
                   <th scope="row">'. $row["id"].'</th>
                   <td>'. $row["first_name"].'</td>
                   <td>'.$row["last_name"].'</td>
@@ -93,7 +93,7 @@ $result = mysqli_query($conn, $sql);
                   <td>'.$row["phone"].'</td>
                   <td>'.$row["group"].'</td>
                   <td><a href="#">Edit</a></td>
-                  <td scope="col"><i class="fas fa-times-circle"></i></td>
+                  <td scope="col"><i onclick="deleteRow('. $row["id"].')" class="fas fa-times-circle"></i></td>
                 </tr>';
                 }
               }
