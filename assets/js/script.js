@@ -38,16 +38,33 @@ $("#add_person").submit(function(e){
 
 // delete row 
 function deleteRow(id){
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: ["Cancel", "Delete"],
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
   $.post({
     url:"./delete.php",
     data:{"id":id},
     success: function(res){
       if(res == 1){
-        $('tr[data-id="'+id+'"]').fadeOut();
-      }
-    },
+        $('tr[data-id="'+id+'"]').fadeOut(600);
+        setTimeout(() => {
+          $('tr[data-id="'+id+'"]').remove(); 
+      }, 600);
+      swal("Contact supprimé avec succès!", {icon: "success",});
+    }
+      },
+    
     error:function(err){
       console.error(err);
     }
+    
   })
+}
+});
 }
